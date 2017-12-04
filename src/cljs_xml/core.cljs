@@ -144,9 +144,9 @@
 (comment
   (xml/emit-str {:tag :testsuite
                  :attrs {:name "foo"
-                         :tests 1
-                         :errors 0
-                         :failures 1
+                         :tests "1"
+                         :errors "0"
+                         :failures "1"
                          :time "1234"}
                  :content
                  [{:tag :testcase
@@ -155,8 +155,8 @@
                            :time "1234"}
                    :content [{:tag :failure
                               :attrs {:message "message"}
-                              :content (clojure.string/join "\n"
-                                                            ["message"
-                                                             (str "expected: " "1"
-                                                                  "  actual: " "2"
-                                                                  "      at: " "thing.cljs" ":" "123")])}]}]}))
+                              :content [(clojure.string/join "\n"
+                                                             ["message"
+                                                              (str "expected: " "1"
+                                                                   "  actual: " "2"
+                                                                   "      at: " "thing.cljs" ":" "123")])]}]}]}))
