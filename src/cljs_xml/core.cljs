@@ -154,8 +154,8 @@
                            :name "foo-test"
                            :time "1234"}
                    :content [{:tag :failure
-                              :attrs {:message
-                                      (clojure.string/join "\n"
-                                                           ["expected: 1"
-                                                            "  actual: 2"
-                                                            "      at: thing.cljs:123"])}}]}]}))
+                              :attrs {:message "In file foo_tests.clj at line 19:"}
+                              :content [(clojure.string/join "\n"
+                                                             ["expected: 1"
+                                                              "  actual: 2"
+                                                              "      at: foo.cljs:123"])]}]}]}))
