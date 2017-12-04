@@ -144,10 +144,10 @@
 (comment
   (xml/emit-str {:tag :testsuite
                  :attrs {:name "foo"
-                         :tests "1"
-                         :errors "0"
+                         :tests "3"
+                         :errors "1"
                          :failures "1"
-                         :time "1234"}
+                         :time "7002"}
                  :content
                  [{:tag :testcase
                    :attrs {:classname "foo"
@@ -158,4 +158,20 @@
                               :content [(clojure.string/join "\n"
                                                              ["expected: 1"
                                                               "  actual: 2"
-                                                              "      at: foo.cljs:123"])]}]}]}))
+                                                              "      at: foo.cljs:123"])]}]}
+                  {:tag :testcase
+                   :attrs {:classname "foo"
+                           :name "bar-test"
+                           :time "5678"}
+                   :content []}
+                  {:tag :testcase
+                   :attrs {:classname "foo"
+                           :name "baz-test"
+                           :time "90"}
+                   :content [{:tag :error
+                              :attrs {:message "In file foo_tests.clj at line 29"}
+                              :content [(clojure.string/join "\n"
+                                                             ["expected: 1"
+                                                              "  actual: java.lang.NullPointerException"
+                                                              "      at: foo.cljs:456"
+                                                              "      ..."])]}]}]}))
